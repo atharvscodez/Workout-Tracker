@@ -1,16 +1,48 @@
-# React + Vite
+# Workout Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A workout logging app built with React and Firebase. Log workouts, add exercises, and track volume over time. Data persists via Firestore.
 
-Currently, two official plugins are available:
+**Live: [workout-tracker-rho-neon.vercel.app](https://workout-tracker-rho-neon.vercel.app)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it does
 
-## React Compiler
+You can create a workout (name, date, duration), add exercises to it (name, sets, reps, weight, muscle group), and the app calculates total volume per workout. There's a stats page that shows total workouts logged, average duration, and cumulative volume.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+- Vite + React (functional components, useState)
+- Firebase Firestore for data persistence
+- Deployed on Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Background
+
+Started this as a Java prototype — three classes modeling exercises, workouts, and a workout log. Rebuilt it as a web app to learn React and get real data persistence working. The core data model stayed the same, just translated across paradigms.
+
+## Running locally
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/atharvscodez/Workout-Tracker.git
+cd Workout-Tracker
+npm install
+```
+
+Copy `.env.example` to `.env` and add your Firebase project credentials:
+
+```env
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+```
+
+```bash
+npm run dev
+```
+
+## Planned
+
+Google auth, lift progression charts, mobile layout.
